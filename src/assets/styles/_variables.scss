@@ -1,0 +1,14 @@
+$accent: #b53471;
+$white: #f1e8e8;
+$brown: #310c24;
+$black: #1a0612;
+$ligth-brown: #511734;
+$hard-dark-accent: darkest($accent, 30%);
+$dark-accent: darkest($accent, 15%);
+
+$bx-accent: 0 4px 4px 0 rgba($accent, 0.25);
+$bx-16: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+
+$mobile: 480px;
+
+$default-font: 'Roboto', sans-serif;
