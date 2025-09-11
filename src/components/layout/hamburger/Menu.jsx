@@ -1,4 +1,5 @@
 import cn from 'clsx'
+
 import styles from './Hamburger.module.scss'
 import { menu } from './menu.data'
 

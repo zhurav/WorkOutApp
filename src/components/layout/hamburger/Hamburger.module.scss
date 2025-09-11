@@ -8,6 +8,13 @@
 		border: none;
 		outline: none;
 		cursor: pointer;
+
+		> svg > path {
+			fill: $white;
+		}
+	}
+	> button {
+		font-size: 30px;
 	}
 }
 .menu {

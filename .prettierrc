@@ -1,9 +1,23 @@
 {
-    "semi": false,
-    "singleQuote": true,
-    "tabWidth": 2,
-    "useTabs": true,
-    "trailingComma": "none",
-    "arrowParens": "avoid",
-    "jsxSingleQuote": true
+	"semi": false,
+	"singleQuote": true,
+	"tabWidth": 2,
+	"useTabs": true,
+	"trailingComma": "none",
+	"arrowParens": "avoid",
+	"jsxSingleQuote": true,
+
+	"plugins": ["@trivago/prettier-plugin-sort-imports"],
+
+	"importOrder": [
+		"<THIRD_PARTY_MODULES>",
+		".*/[Hh]ooks/.*",
+		".*/screens/.*",
+		".*/components/.*",
+		"^../(.*)",
+		"^./(.*)"
+	],
+	"importOrderSeparation": true,
+	"importOrderSortSpecifiers": true,
+	"importOrderParserPlugins": ["jsx"]
 }

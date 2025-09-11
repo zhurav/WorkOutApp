@@ -1,7 +1,10 @@
-import { useAuth } from '../../../Hooks/useAuth'
+import { IoMdArrowBack } from 'react-icons/io'
+
+import { useAuth } from '../../../hooks/useAuth'
+
 import Hamburger from '../Hamburger/Hamburger'
+
 import styles from './Header.module.scss'
-import { FiArrowLeft } from 'react-icons/fi'
 
 const Header = ({ backlink }) => {
 	/*TODO: rect router usehistory */
@@ -10,7 +13,7 @@ const Header = ({ backlink }) => {
 	return (
 		<header className={styles.header}>
 			<button onClick={() => {}}>
-				<FiArrowLeft color='white' />
+				<IoMdArrowBack fill='#fff' fontSize={28} />
 			</button>
 			{/*user profile*/}
 			<Hamburger />
