@@ -11,11 +11,13 @@
 
 	"importOrder": [
 		"<THIRD_PARTY_MODULES>",
-		".*/[Hh]ooks/.*",
+		"/ui/",
+		".*/hooks/.*",
 		".*/screens/.*",
 		".*/components/.*",
 		"^../(.*)",
-		"^./(.*)"
+		"^./(.*)",
+		"/module.scss/"
 	],
 	"importOrderSeparation": true,
 	"importOrderSortSpecifiers": true,

@@ -9,8 +9,12 @@
 		outline: none;
 		cursor: pointer;
 
-		> svg > path {
-			fill: $white;
+		> svg {
+			animation: opacity 0.8s;
+
+			> path {
+				fill: $white;
+			}
 		}
 	}
 	> button {
@@ -23,7 +27,7 @@
 	right: 0;
 	background-color: $accent;
 	padding: 10px 12px;
-	font-size: 14px;
+	font-size: 16px;
 	box-shadow: $bx-16;
 	border-radius: 10px 0 10px 10px;
 	min-width: 116px;
@@ -35,6 +39,10 @@
 	}
 	ul {
 		list-style: none;
+
+		button {
+			font-size: 16px;
+		}
 		a {
 			text-decoration: none;
 			color: $white;

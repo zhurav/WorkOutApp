@@ -7,47 +7,47 @@ export const routes = [
 	{
 		path: '/',
 		component: Home,
-		auth: false
+		isAuth: false
 	},
 	{
 		path: '/auth',
 		component: Auth,
-		auth: false
+		isAuth: false
 	},
 	{
 		path: '/new-workout',
 		component: NewWorkout,
-		auth: true
+		isAuth: true
 	},
 	{
 		path: '/profile',
 		exact: false,
 		component: Profile,
-		auth: true
+		isAuth: false
 	} /*
     {
         path: '/new-exercise',
         exact: false,
         component: NewExercise,
-        auth: true,
+        isAuth: true,
     },
     {
         path: '/workout/:id',
         exact: false,
         component: SingleWorkout,
-        auth: true,
+        isAuth: true,
     },
     {
         path:'/workouts',
         exact: false,
         component: ListWorkouts,
-        auth: true,
+        isAuth: true,
     },
     {
         path: '/exercise',
         exact: false,
         component: SingleExercise,
-        auth:true,
+        isAuth:true,
     },
     */
 ]

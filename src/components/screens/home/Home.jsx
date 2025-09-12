@@ -1,10 +1,23 @@
+import { useNavigate } from 'react-router-dom'
+
+import Button from '../../ui/button/Button.jsx'
+
+import { useAuth } from '../../../hooks/useAuth'
+
 import Layout from '../../layout/Layout.jsx'
-import Test from '../../layout/test/Test.jsx'
+
+import styles from './Home.module.scss'
 
 function Home() {
+	const { isAuth } = useAuth()
+	const navigate = useNavigate()
 	return (
-		<Layout>
-			<Test></Test>
+		<Layout bgImage='/images/home-bg.jpg'>
+			<Button clickHandler={() => navigate(!isAuth ? '/new-workout' : '/auth')}>
+				{isAuth ? 'New' : 'Sign in'}
+			</Button>
+			<h1 className={styles.heading}>Best Workout App for YOU!</h1>
+			{/*TODO: Counters*/}
 		</Layout>
 	)
 }
