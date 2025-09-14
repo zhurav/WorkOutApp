@@ -1,7 +1,10 @@
 import cn from 'clsx'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useForm } from 'react-hook-form'
 
 import Button from '../../ui/button/Button.jsx'
+import Field from '../../ui/field/Field.jsx'
+import Loader from '../../ui/loader/Loader.jsx'
 
 import Layout from '../../layout/Layout.jsx'
 
@@ -9,55 +12,77 @@ import styles from './Login.module.scss'
 
 //const [error, setError] = useState('')
 
+const isLoading = true
+const isLoadingAuth = false
 const Auth = () => {
-	const [showPass, setShowPass] = useState(false)
-	const togglePassword = () => {
-		setShowPass(prev => !prev)
+	const {
+		register,
+		handleSubmit,
+		formState: { errors }
+	} = useForm({
+		mode: 'noChange'
+	})
+
+	const onSubmit = data => {
+		console.log(data)
 	}
+
+	const [entered, setEntered] = useState(false)
+	useEffect(() => {
+		setEntered(true)
+	}, [])
+
 	return (
 		<Layout
 			bgImage='/images/home-bg.jpg'
-			oberlay={0.45}
+			overlay={0.45}
 			bgSize='cover'
 			bgPosition='center'
 		>
-			<div className={styles.screen}>
-				<form className={styles.card}>
-					<div className={styles.header}>
-						<div className={styles.logo}>
-							<img src='/images/logo.PNG' alt='workout' loading='lazy' />
-						</div>
-						<h1>Sign In</h1>
-						<p>Best Workout App for YOu!</p>
+			<form
+				onSubmit={handleSubmit(onSubmit)}
+				className={cn(styles.card, entered && styles.cardEnter)}
+			>
+				<div className={styles.header}>
+					<div className={styles.logo}>
+						<img src='/images/logo.PNG' alt='workout' loading='lazy' />
 					</div>
+					<h1>Sign In</h1>
+					<p>Best Workout App for YOu!</p>
+				</div>
 
-					<label className={styles.field}>
-						<span>Email</span>
-						<input type='email' placeholder='you@example.com' />
-					</label>
+				<Field
+					name='email'
+					register={register}
+					options={{
+						required: 'Email обязателен',
+						pattern: { value: /\S+@\S+\.\S+/, message: 'Wrong email' }
+					}}
+					label='Email'
+					type='email'
+					placeholder='you@example.com'
+					autoComplete='email'
+					error={errors.email?.message}
+				/>
 
-					<label className={styles.field}>
-						<span>Password</span>
-						<div className={styles.passWrap}>
-							<input
-								type={showPass ? 'text' : 'password'}
-								placeholder='password'
-							/>
+				<Field
+					name='password'
+					register={register}
+					options={{
+						required: '',
+						minLength: { value: 6, message: 'Minimum 6 symbols' }
+					}}
+					type='password'
+					label='Password'
+					placeholder='*********'
+					autoComplete='current-password'
+					error={errors.password?.message}
+				/>
 
-							<button
-								type='button'
-								className={styles.eye}
-								onClick={togglePassword}
-							>
-								{showPass ? '🙈' : '👁️'}
-							</button>
-						</div>
-					</label>
-
-					<Button size='xl'>Sign In</Button>
-				</form>
-			</div>
+				<Button size='xl'>Sign In</Button>
+			</form>
 		</Layout>
 	)
 }
+
 export default Auth

@@ -1,0 +1,62 @@
+@import '../../../assets/styles/variables';
+
+.field {
+	display: grid;
+	gap: 6px;
+	margin-bottom: 12px;
+
+	span {
+		font-size: 20px;
+		opacity: 0.9;
+	}
+
+	input {
+		width: 100%;
+		padding: 12px 14px;
+		border-radius: 12px;
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		background: rgba(0, 0, 0, 0.25);
+		color: #fff;
+		outline: none;
+		transition: border-color 0.15s;
+		font-size: 16px;
+
+		&::placeholder {
+			color: rgba(255, 255, 255, 0.6);
+		}
+		&:focus {
+			border-color: rgba(255, 255, 255, 0.45);
+		}
+	}
+}
+.passWrap {
+	position: relative;
+
+	input {
+		padding-right: 44px;
+	}
+}
+
+.eye {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 40px;
+	border: 0;
+	background: transparent;
+	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+}
+.error {
+	color: rgba(255, 71, 87, 0.7);
+	padding: 0 10px;
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+
+.icon {
+	color: $accent-04;
+	font-size: 30px;
+}

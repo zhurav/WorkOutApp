@@ -13,10 +13,10 @@ function Home() {
 	const navigate = useNavigate()
 	return (
 		<Layout bgImage='/images/home-bg.jpg'>
+			<h1 className={styles.heading}>Best Workout App for YOU!</h1>
 			<Button clickHandler={() => navigate(isAuth ? '/new-workout' : '/auth')}>
 				{isAuth ? 'New' : 'Sign in'}
 			</Button>
-			<h1 className={styles.heading}>Best Workout App for YOU!</h1>
 			{/*TODO: Counters*/}
 		</Layout>
 	)
